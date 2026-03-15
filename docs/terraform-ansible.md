@@ -31,6 +31,54 @@
 | **`variables.tf`** | Declaração de variáveis esperadas |
 | **`outputs.tf`** | Valores que o Terraform retorna após aplicação (opcional) |
 
+### 🔎 Componentes Básicos do Terraform
+
+#### ✅ Resource
+Um `resource` descreve um recurso que o Terraform irá criar/gerenciar.
+
+```hcl
+resource "aws_vpc" "example" {
+  cidr_block = "10.0.0.0/16"
+  tags = { Name = "example-vpc" }
+}
+```
+
+#### ✅ Module
+Um `module` organiza infraestrutura em blocos reutilizáveis (pode ser local ou remoto).
+
+```hcl
+module "vpc" {
+  source = "terraform-aws-modules/vpc/aws"
+  name   = "app-vpc"
+  cidr   = "10.0.0.0/16"
+}
+```
+
+#### ✅ Variable
+`variable` define um parâmetro configurável para um módulo.
+
+```hcl
+variable "environment" {
+  type        = string
+  description = "Nome do ambiente (dev / prod)"
+}
+```
+
+Use em outro arquivo:
+
+```hcl
+environment = "prod"
+```
+
+#### ✅ Output
+`output` expõe valores após o `terraform apply`, útil para ver informações ou passar para outros módulos.
+
+```hcl
+output "vpc_id" {
+  value = module.vpc.vpc_id
+}
+```
+
 ### Ansible
 
 | Arquivo | Descrição |
