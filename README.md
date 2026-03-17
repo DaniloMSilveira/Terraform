@@ -35,7 +35,7 @@ Este repositório é um guia de estudos para aprender infraestrutura como códig
 
 1. **Clone o repositório**:
    ```bash
-   git clone https://github.com/seu-usuario/terraform.git
+   git clone https://github.com/DaniloMSilveira/terraform.git
    cd terraform
    ```
 
@@ -44,7 +44,7 @@ Este repositório é um guia de estudos para aprender infraestrutura como códig
    cd examples/aws-ec2
    ```
 
-3. **Configure variáveis** (se necessário, crie arquivos `.tfvars` para ambientes dev/prod).
+3. ** Acesse um dos ambientes disponíveis em /env (dev ou prod)**
 
 4. **Execute os comandos Terraform**:
    ```bash
