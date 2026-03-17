@@ -144,12 +144,3 @@ ansible-playbook -i <inventory> <playbook.yml> --private-key ~/key.pem  # Com ch
          ↓
 7. Validar aplicação em execução
 ```
-
----
-
-## 💡 Dicas Rápidas
-
-- **Terraform State**: arquivo `.tfstate` contém estado atual — nunca commite no Git (ignore com `.gitignore`)
-- **Providers**: sempre especifique versões (`~> 5.0`) para evitar breaking changes
-- **SSH Keys**: certifique-se de que as chaves privadas estão acessíveis e com permissões corretas (`chmod 600`)
-- **Idempotência**: Ansible é idempotente — execute um playbook múltiplas vezes com segurança
